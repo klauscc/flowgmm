@@ -140,7 +140,8 @@ class CouplingLayer(CouplingLayerBase):
         self.st_net = ResNet(in_channels, mid_channels, 2 * in_channels,
                              num_blocks=num_blocks, kernel_size=3, padding=1,
                              double_after_norm=(self.mask.type == MaskType.CHECKERBOARD),
-                             init_zeros=init_zeros)
+                             # init_zeros=init_zeros,
+                             )
 
         # Learnable scale for s
         self.rescale = nn.utils.weight_norm(Rescale(in_channels))
